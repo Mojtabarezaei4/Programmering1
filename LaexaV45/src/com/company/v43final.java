@@ -7,7 +7,7 @@ public class v43final {
 	public static void main(String[] args) {
 		
 		
-				
+				int hej = 1;
 				//Scanner for att ta in en variabel
 				Scanner input = new Scanner(System.in);
 				
