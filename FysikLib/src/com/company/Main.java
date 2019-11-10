@@ -12,15 +12,16 @@ public class Main {
         System.out.println(fluidPressure(FluidTable.WATER, 10));
         System.out.println(fluidPressure(FluidTable.WATER, 10));
         System.out.println(kineticEnergy(5, 10));
+        System.out.println(potentialEnergy(5,10));
 
     }
+
 
     /**
      *
      * @param fahrenheit - The temperature at Fahrenheit
      * @return It returns the temperature at Celsius
      */
-
     public static double fahrenheitToCelsius(double fahrenheit){
 
         double celsius = 0;
@@ -29,6 +30,7 @@ public class Main {
         return celsius;
 
     }
+
 
     /**
      *
@@ -44,13 +46,13 @@ public class Main {
 
     }
 
+
     /**
      *
      * @param fluid - "fluid" är substanten som man vill räkna ut trycket i ett speciellt "deep".
      * @param deep - En variabel som är djupet.
      * @return - Den returnar mängden av trycket.
      */
-
     public static double fluidPressure(FluidTable fluid, double deep){
 
         double thePressure = 0;
@@ -65,7 +67,6 @@ public class Main {
      * @param deep - En variabel som säger hur djup i vattnet.
      * @return - Det resultatet av trycket i vattnet.
      */
-
     public static double pressureUnderWater(double deep){
 
         double d = 0.998;
@@ -94,4 +95,18 @@ public class Main {
 
     }
 
+
+    /**
+     *
+     * @param mass - En variabel av massan hos ett föremål.
+     * @param height - En variabel av höjden hos föremålet.
+     * @return - returnar lägesenergiet.
+     */
+    public static double potentialEnergy(double mass, double height){
+
+        double thePotentialEnergy = 0;
+        thePotentialEnergy = mass * G * height;
+
+        return thePotentialEnergy;
+    }
 }
