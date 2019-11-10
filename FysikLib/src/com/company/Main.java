@@ -6,7 +6,7 @@ public class Main {
 	// write your code here
 
         System.out.println(fahrenheitToCelsius(50));
-
+        System.out.println(kelvinToCelsius(500));
 
     }
 
@@ -25,6 +25,19 @@ public class Main {
 
     }
 
+    /**
+     *
+     * @param kelvin - The temperature at Kelvin
+     * @return It returns the temperature at Celsius
+     */
+    public static double kelvinToCelsius(double kelvin){
+
+        double celsius = 0;
+        celsius = kelvin - 273.15;
+
+        return celsius;
+
+    }
 
 
 }
