@@ -11,6 +11,7 @@ public class Main {
         System.out.println(kelvinToCelsius(500));
         System.out.println(fluidPressure(FluidTable.WATER, 10));
         System.out.println(fluidPressure(FluidTable.WATER, 10));
+        System.out.println(kineticEnergy(5, 10));
 
     }
 
@@ -74,6 +75,22 @@ public class Main {
         thePressureUnderWater = density * G * deep;
 
         return thePressureUnderWater;
+
+    }
+
+
+    /**
+     *
+     * @param mass - En variabel för massan hos ett föremål.
+     * @param velocity - En variabel för hastighet hos föremålet
+     * @return - den kinetiska energin.
+     */
+    public static double kineticEnergy(double mass, double velocity){
+
+        double theKienticEnergy = 0;
+        theKienticEnergy = (mass * Math.pow(velocity,2)) / 2;
+
+        return theKienticEnergy;
 
     }
 
