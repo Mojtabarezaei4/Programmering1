@@ -2,11 +2,14 @@ package com.company;
 
 public class Main {
 
+    static double G = 9.82 ;
+
     public static void main(String[] args) {
 	// write your code here
 
         System.out.println(fahrenheitToCelsius(50));
         System.out.println(kelvinToCelsius(500));
+        System.out.println(fluidPressure(FluidTable.WATER, 10));
 
     }
 
@@ -37,6 +40,21 @@ public class Main {
 
         return celsius;
 
+    }
+
+    /**
+     *
+     * @param fluid - "fluid" är substanten som man vill räkna ut trycket i ett speciellt "deep".
+     * @param deep - en variabel som är djupet.
+     * @return
+     */
+
+    public static double fluidPressure(FluidTable fluid, double deep){
+
+        double thePressure = 0;
+        thePressure = fluid.density * G * deep;
+
+        return thePressure;
     }
 
 
