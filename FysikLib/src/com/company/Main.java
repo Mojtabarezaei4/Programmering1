@@ -10,6 +10,7 @@ public class Main {
         System.out.println(fahrenheitToCelsius(50));
         System.out.println(kelvinToCelsius(500));
         System.out.println(fluidPressure(FluidTable.WATER, 10));
+        System.out.println(fluidPressure(FluidTable.WATER, 10));
 
     }
 
@@ -45,8 +46,8 @@ public class Main {
     /**
      *
      * @param fluid - "fluid" är substanten som man vill räkna ut trycket i ett speciellt "deep".
-     * @param deep - en variabel som är djupet.
-     * @return
+     * @param deep - En variabel som är djupet.
+     * @return - Den returnar mängden av trycket.
      */
 
     public static double fluidPressure(FluidTable fluid, double deep){
@@ -57,5 +58,23 @@ public class Main {
         return thePressure;
     }
 
+
+    /**
+     *
+     * @param deep - En variabel som säger hur djup i vattnet.
+     * @return - Det resultatet av trycket i vattnet.
+     */
+
+    public static double pressureUnderWater(double deep){
+
+        double d = 0.998;
+        double density = d * 1E3;
+        double thePressureUnderWater = 0;
+
+        thePressureUnderWater = density * G * deep;
+
+        return thePressureUnderWater;
+
+    }
 
 }
