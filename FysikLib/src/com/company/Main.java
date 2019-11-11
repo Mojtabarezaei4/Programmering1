@@ -25,6 +25,7 @@ public class Main {
         System.out.println(svtVelocity(10, 5));
         System.out.println(svtDistance(10, 5));
         System.out.println(svtTime(10, 2));
+        System.out.println(work(50, 10));
 
     }
 
@@ -255,5 +256,21 @@ public class Main {
         theTime = distance / velocity;
 
         return theTime;
+    }
+
+
+    /**
+     *
+     * En metod för att räkna arbetet med hjälp av kraft och strckan.
+     * @param force - en variabel för kraft.
+     * @param distance - en variabel för sträckan.
+     * @return - Den returnar arbetet.
+     */
+    public static double work(double force, double distance){
+
+        double theWork = 0;
+        theWork = force * distance;
+
+        return theWork;
     }
 }
