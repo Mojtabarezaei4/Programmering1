@@ -19,6 +19,7 @@ public class Main {
         System.out.println(potentialEnergy(2,5));
         System.out.println(fallSpeed(2.5));
         System.out.println(delta(5, 1));
+        System.out.println(volumeToMass(FluidTable.WATER, 1));
 
     }
 
@@ -151,6 +152,23 @@ public class Main {
         theDiffrence = last - first;
 
         return theDiffrence;
+
+    }
+
+
+    /**
+     *
+     * Räknar ut massan på en vätska från dens volym.
+     * @param fluid - En variabel som en vätska i detta fallet.
+     * @param volume - En variabel som står fär volymen.
+     * @return - Den returnar tillbaka massan på vötskan.
+     */
+    public static double volumeToMass(FluidTable fluid, double volume){
+
+        double theMass = 0;
+        theMass = fluid.density * volume;
+
+        return theMass;
 
     }
 }
