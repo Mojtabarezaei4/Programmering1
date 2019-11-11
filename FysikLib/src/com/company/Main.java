@@ -21,6 +21,7 @@ public class Main {
         System.out.println(delta(5, 1));
         System.out.println(volumeToMass(FluidTable.WATER, 1));
         System.out.println(volumeToMass(GasTable.AIR, 1));
+        System.out.println(volumeToMass(SolidTable.IRON, 1));
 
     }
 
@@ -186,5 +187,20 @@ public class Main {
         theMass = gas.density * volume;
 
         return theMass;
+    }
+
+    /**
+     *
+     * Den räknar massan hos en material utifrån dens densitet och volym.
+     * @param solid - En variabel som är en material i detta fallet.
+     * @param volume - En variabel som är volym i detta fallet.
+     * @return - Den returnar tillbaka massan.
+     */
+    public static double volumeToMass(SolidTable solid, double volume){
+
+        double themass = 0;
+        themass = solid.density * volume;
+
+        return themass;
     }
 }
