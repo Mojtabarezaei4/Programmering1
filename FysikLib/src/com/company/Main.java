@@ -27,6 +27,7 @@ public class Main {
         System.out.println(svtTime(10, 2));
         System.out.println(work(50, 10));
         System.out.println(power(1000, 2));
+        System.out.println(heat(SolidTable.IRON, 1, 2));
 
     }
 
@@ -198,8 +199,8 @@ public class Main {
 
     /**
      *
-     * Den räknar massan hos en material utifrån dens densitet och volym.
-     * @param solid - En variabel som är en material i detta fallet.
+     * Den räknar massan hos ett material utifrån dens densitet och volym.
+     * @param solid - En variabel som är ett material i detta fallet.
      * @param volume - En variabel som är volym i detta fallet.
      * @return - Den returnar tillbaka massan.
      */
@@ -289,5 +290,22 @@ public class Main {
         thePower = work / time;
 
         return thePower;
+    }
+
+
+    /**
+     *
+     * En metod för att räkna fram hur mycket energi behövs för att värma ett visst material till angivet antal grader.
+     * @param solid- en variabel i detta fallet ett visst material.
+     * @param mass - massan hos materialet.
+     * @param deltaT - skillnaden mella start- och slut-temperaturen.
+     * @return - Den returnar den mängden av energin som behövs.
+     */
+    public static double heat(SolidTable solid, double mass, double deltaT){
+
+        double theEnergi = 0;
+        theEnergi = solid.heatCapacity * mass * deltaT;
+
+        return theEnergi;
     }
 }
