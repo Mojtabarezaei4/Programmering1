@@ -28,6 +28,7 @@ public class Main {
         System.out.println(work(50, 10));
         System.out.println(power(1000, 2));
         System.out.println(heat(SolidTable.IRON, 1, 2));
+        System.out.println(heat(FluidTable.WATER, 1, 100));
 
     }
 
@@ -305,6 +306,22 @@ public class Main {
 
         double theEnergi = 0;
         theEnergi = solid.heatCapacity * mass * deltaT;
+
+        return theEnergi;
+    }
+
+    /**
+     *
+     * Den metoden räknar fram hur mycket energi behövs för att värma en viss vätska till angivet antal grader.
+     * @param fluid - en variabel i detta fallet en viss vätska.
+     * @param mass - en variabel i detta fallet massan hos vätskan.
+     * @param deltaT - skillnaden mellan start- och slut-temperaturen.
+     * @return - Den returnar den mängden av energin som behövs.
+     */
+    public static double heat(FluidTable fluid, double mass, double deltaT){
+
+        double theEnergi = 0;
+        theEnergi = fluid.heatCapacity * mass * deltaT;
 
         return theEnergi;
     }
