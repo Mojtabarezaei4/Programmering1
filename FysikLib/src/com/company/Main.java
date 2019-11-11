@@ -24,6 +24,7 @@ public class Main {
         System.out.println(volumeToMass(SolidTable.IRON, 1));
         System.out.println(svtVelocity(10, 5));
         System.out.println(svtDistance(10, 5));
+        System.out.println(svtTime(10, 2));
 
     }
 
@@ -238,5 +239,21 @@ public class Main {
         theDistance = velocity * time;
 
         return theDistance;
+    }
+
+
+    /**
+     *
+     * En metod för att räkna ut tiden med hjälp av sträcka och hastighet.
+     * @param distance - en variabel för sträckan.
+     * @param velocity - en variabel för hastigheten.
+     * @return - Den returnar tiden.
+     */
+    public static double svtTime(double distance, double velocity){
+
+        double theTime = 0;
+        theTime = distance / velocity;
+
+        return theTime;
     }
 }
