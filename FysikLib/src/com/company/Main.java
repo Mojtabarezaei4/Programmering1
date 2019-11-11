@@ -22,6 +22,7 @@ public class Main {
         System.out.println(volumeToMass(FluidTable.WATER, 1));
         System.out.println(volumeToMass(GasTable.AIR, 1));
         System.out.println(volumeToMass(SolidTable.IRON, 1));
+        System.out.println(svtVelocity(10, 5));
 
     }
 
@@ -174,6 +175,7 @@ public class Main {
 
     }
 
+
     /**
      *
      * Räknar ut massan på en gas utifrån dens volym.
@@ -189,6 +191,7 @@ public class Main {
         return theMass;
     }
 
+
     /**
      *
      * Den räknar massan hos en material utifrån dens densitet och volym.
@@ -202,5 +205,21 @@ public class Main {
         themass = solid.density * volume;
 
         return themass;
+    }
+
+
+    /**
+     *
+     * En metod för att räkna ut medelhastigheten med hjälp av sträcka och tid.
+     * @param distance - en variabel för sträcka.
+     * @param time - en variabel för tid.
+     * @return - returnar medelhastigheten.
+     */
+    public static double svtVelocity(double distance, double time){
+
+        double averageSpeed = 0;
+        averageSpeed = distance / time;
+
+        return averageSpeed;
     }
 }
