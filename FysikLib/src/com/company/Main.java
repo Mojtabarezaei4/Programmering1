@@ -18,6 +18,7 @@ public class Main {
         System.out.println(kineticEnergy(2, 2));
         System.out.println(potentialEnergy(2,5));
         System.out.println(fallSpeed(2.5));
+        System.out.println(delta(5, 1));
 
     }
 
@@ -120,6 +121,7 @@ public class Main {
         return thePotentialEnergy;
     }
 
+
     /**
      *
      * En metod som räknar ut den högsta hastigheten från ett visst höjd i fritt fall.
@@ -132,5 +134,23 @@ public class Main {
         theHighestSpeed =  Math.sqrt ((2*height) / g_swe) * g_swe ;
 
         return theHighestSpeed;
+    }
+
+
+    /**
+     *
+     * Den räknar ut skillnaden mellan två tal.
+     * @param first - En variabel som är första talet.
+     * @param last - Andra variabel som är andra talet.
+     * @return - Den returnar det talet som är skillnaden mellan variablerna "first och last".
+     */
+    public static double delta(double first, double last){
+
+
+        double theDiffrence = 0;
+        theDiffrence = last - first;
+
+        return theDiffrence;
+
     }
 }
