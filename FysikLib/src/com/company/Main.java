@@ -23,6 +23,7 @@ public class Main {
         System.out.println(volumeToMass(GasTable.AIR, 1));
         System.out.println(volumeToMass(SolidTable.IRON, 1));
         System.out.println(svtVelocity(10, 5));
+        System.out.println(svtDistance(10, 5));
 
     }
 
@@ -221,5 +222,21 @@ public class Main {
         averageSpeed = distance / time;
 
         return averageSpeed;
+    }
+
+
+    /**
+     *
+     * En metod för att räkna ut sträckan med hjälp av hastighet och tid.
+     * @param velocity - en variabel som är för hastighet.
+     * @param time - en variabel som är för tid.
+     * @return - Den returnar sträckan.
+     */
+    public static double svtDistance(double velocity, double time){
+
+        double theDistance = 0;
+        theDistance = velocity * time;
+
+        return theDistance;
     }
 }
