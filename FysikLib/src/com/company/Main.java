@@ -26,6 +26,7 @@ public class Main {
         System.out.println(svtDistance(10, 5));
         System.out.println(svtTime(10, 2));
         System.out.println(work(50, 10));
+        System.out.println(power(1000, 2));
 
     }
 
@@ -272,5 +273,21 @@ public class Main {
         theWork = force * distance;
 
         return theWork;
+    }
+
+
+    /**
+     *
+     * En metod för att räkna ut effektet med hjälp av arbete och tid.
+     * @param work - en variabel för arbetet.
+     * @param time - en variabel för tiden.
+     * @return - Den returnar effektet.
+     */
+    public static double power(double work, double time){
+
+        double thePower = 0;
+        thePower = work / time;
+
+        return thePower;
     }
 }
