@@ -20,6 +20,7 @@ public class Main {
         System.out.println(fallSpeed(2.5));
         System.out.println(delta(5, 1));
         System.out.println(volumeToMass(FluidTable.WATER, 1));
+        System.out.println(volumeToMass(GasTable.AIR, 1));
 
     }
 
@@ -170,5 +171,20 @@ public class Main {
 
         return theMass;
 
+    }
+
+    /**
+     *
+     * Räknar ut massan på en gas utifrån dens volym.
+     * @param gas - En variabel som är en gas i datta fallet.
+     * @param volume - En variabel som står för volymen.
+     * @return - returnar massan hos gasen.
+     */
+    public static double volumeToMass(GasTable gas, double volume){
+
+        double theMass = 0;
+        theMass = gas.density * volume;
+
+        return theMass;
     }
 }
