@@ -28,7 +28,8 @@ public class Main {
         System.out.println(work(50, 10));
         System.out.println(power(1000, 2));
         System.out.println(heat(SolidTable.IRON, 1, 2));
-        System.out.println(heat(FluidTable.WATER, 1, 100));
+        System.out.println(heat(FluidTable.WATER, 1, 10));
+        System.out.println(heat(GasTable.AIR, 1, 1));
 
     }
 
@@ -322,6 +323,23 @@ public class Main {
 
         double theEnergi = 0;
         theEnergi = fluid.heatCapacity * mass * deltaT;
+
+        return theEnergi;
+    }
+
+
+    /**
+     *
+     * Den metoden räknar fram hur mycket energi behövs för att värma en viss gas till angivet antal grader.
+     * @param gas - en variabel i detta fallet en viss gas.
+     * @param mass - en variabel i detta fallet massan hos gasen.
+     * @param deltaT - skillnaden mellan start- och slut-temperaturen.
+     * @return - Den returnar den mängden av energin som behövs.
+     */
+    public static double heat(GasTable gas, double mass, double deltaT){
+
+        double theEnergi = 0;
+        theEnergi = gas.heatCapacity * mass * deltaT;
 
         return theEnergi;
     }
