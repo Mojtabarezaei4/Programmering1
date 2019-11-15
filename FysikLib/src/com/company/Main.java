@@ -14,7 +14,7 @@ public class Main {
         System.out.println(fahrenheitToCelsius(50));
         System.out.println(kelvinToCelsius(0));
         System.out.println(fluidPressure(FluidTable.WATER, 10));
-        System.out.println(fluidPressure(FluidTable.WATER, 10));
+        System.out.println(pressureUnderWater(10));
         System.out.println(kineticEnergy(2, 2));
         System.out.println(potentialEnergy(2,5));
         System.out.println(fallSpeed(2.5));
@@ -30,6 +30,7 @@ public class Main {
         System.out.println(heat(SolidTable.IRON, 1, 2));
         System.out.println(heat(FluidTable.WATER, 1, 10));
         System.out.println(heat(GasTable.AIR, 1, 1));
+        System.out.println(velocityToHeight(9.82));
 
     }
 
@@ -91,11 +92,9 @@ public class Main {
 
         double d = 0.998;
         double density = d * 1E3;
-        double thePressureUnderWater = 0;
+        double thePressure = density * g_swe * deep;
 
-        thePressureUnderWater = density * G * deep;
-
-        return thePressureUnderWater;
+        return thePressure;
 
     }
 
@@ -342,5 +341,17 @@ public class Main {
         theEnergi = gas.heatCapacity * mass * deltaT;
 
         return theEnergi;
+    }
+
+
+    public static double velocityToHeight(double velocity){
+
+        double theHeight = 0;
+        double time = 1;
+        theHeight= (Math.pow(velocity,2)*Math.sin(90)*2 / g_swe);
+        /*
+        theHeight = (velocity * Math.sin(90) * time) - (g_swe*Math.pow(time,2)/2);
+*/
+        return theHeight;
     }
 }
