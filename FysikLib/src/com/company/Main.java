@@ -90,9 +90,7 @@ public class Main {
      */
     public static double pressureUnderWater(double deep){
 
-        double d = 0.998;
-        double density = d * 1E3;
-        double thePressure = density * g_swe * deep;
+        double thePressure = FluidTable.WATER.density * g_swe * deep;
 
         return thePressure;
 
@@ -344,14 +342,18 @@ public class Main {
     }
 
 
+    /**
+     *
+     * Den mtoden räknar fram hur högt kan ett föremål komma med en viss hastighet.
+     * @param velocity - En variabel som står för hastighet hos det föremål.
+     * @return - den returnar höjden.
+     */
     public static double velocityToHeight(double velocity){
 
         double theHeight = 0;
         double time = 1;
-        theHeight= (Math.pow(velocity,2)*Math.sin(90)*2 / g_swe);
-        /*
-        theHeight = (velocity * Math.sin(90) * time) - (g_swe*Math.pow(time,2)/2);
-*/
+        theHeight= Math.pow(velocity, 2) / (2 * g_swe);
+
         return theHeight;
     }
 }
