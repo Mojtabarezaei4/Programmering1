@@ -11,6 +11,12 @@ public class Main {
     public static void main(String[] args) {
 	// write your code here
 
+        System.out.println(volumeToMass(SolidTable.IRON, 60));
+        System.out.println(svtDistance(2.7, 50));
+        System.out.println(heat(FluidTable.WATER, 4, 22));
+
+
+        /**
         System.out.println(fahrenheitToCelsius(50));
         System.out.println(kelvinToCelsius(0));
         System.out.println(fluidPressure(FluidTable.WATER, 10));
@@ -31,6 +37,7 @@ public class Main {
         System.out.println(heat(FluidTable.WATER, 1, 10));
         System.out.println(heat(GasTable.AIR, 1, 1));
         System.out.println(velocityToHeight(9.82));
+         **/
 
     }
 
