@@ -11,9 +11,37 @@ public class Main {
     public static void main(String[] args) {
 	// write your code here
 
+        /**
+         * Hur mycket väger 60 dm^3 järn?
+         */
         System.out.println(volumeToMass(SolidTable.IRON, 60));
+        /**
+         * Hur långt hinner Tomas om han löper med medelhastigheten 2.7 m/s i 50 minuter?
+         */
         System.out.println(svtDistance(2.7, 50));
+        /**
+         * Hur mycket energi krävs för att värma upp 4 liter vatten från rumstemperatur (22 grader) till kokpunkten?
+         */
         System.out.println(heat(FluidTable.WATER, 4, 22));
+        /**
+         * Hur stort är det totala trycket 75 meter under havsytan?
+         */
+        System.out.println(pressureUnderWater(75));
+        /**
+         * Tomas som är 180cm lång kastar upp en boll med massan 250 gram i luften så den får starthastigheten 60 km/h. Hur högt kommer bollen?
+         */
+        System.out.println(velocityToHeight(16.7));
+        /**
+         * En bil med massan 735kg accelererar med konstant acceleration från 0-100 på 4.8 sekunder. Hur stor effekt har bilens motor uppnått?
+         */
+        System.out.println(power(work(force(735, g_swe), svtDistance(100/3.6, 4.8)),4.8 ));
+        /**
+         * En studsboll släpps från 12 meters höjd och varje gång den nuddar marken tappar den 1% av sin energi. Hur många gånger kommer bollen studsa i marken innan den inte studsar hörge än 0.5 meter?
+         */
+        System.out.println(totalTouchdown(12, 0.5,1));
+
+
+
 
 
         /**
@@ -75,6 +103,7 @@ public class Main {
 
 
     /**
+     *
      * Den räknar ut trycket i en vätska.
      * @param fluid - "fluid" är substanten som man vill räkna ut trycket i ett speciellt "deep".
      * @param deep - En variabel som är djupet.
@@ -358,9 +387,76 @@ public class Main {
     public static double velocityToHeight(double velocity){
 
         double theHeight = 0;
-        double time = 1;
         theHeight= Math.pow(velocity, 2) / (2 * g_swe);
 
         return theHeight;
+    }
+
+
+    /**
+     *
+     * En metod som räknar ut medel accelerationen.
+     * @param deltaV - Förädringen i hastigheten.
+     * @param time - förädringen i tiden.
+     * @return Den returnar medelaccelerationen.
+     */
+    public static double medianAcceleration(double deltaV, double time) {
+
+
+        double medianAcceleration = 0;
+        medianAcceleration = deltaV / time;
+
+        return medianAcceleration;
+
+    }
+
+
+    /**
+     *
+     * Metoden röknar ut hur mycket kraft har ett föremål.
+     * @param mass - Massa  hos föremålet.
+     * @param acceleration - Accelerationen hos föremålet.
+     * @return Den returnar kraften.
+     */
+    public static double force(double mass, double acceleration){
+
+        double theForce = 0;
+        theForce = mass * acceleration;
+
+        return theForce;
+    }
+
+
+    /**
+     *
+     * En metod som räknar ut sträckan utifrån accelaration och tid.
+     * @param acceleration - En variabel som är föremålets accelaration.
+     * @param time - En variabel säger under hur långt tid ett föremål flyttar på sig.
+     * @return Sträckan.
+     */
+    public static double accelerationToDistance(double acceleration, double time){
+
+        double distance = 0;
+        distance = acceleration * Math.pow(time, 2) / 2;
+
+        return distance;
+    }
+
+
+    /**
+     *
+     * En metod som räknar ut antal studs för en boll.
+     * @param startHeight - en variabel för vilken höjd bollen har från början.
+     * @param minHeight - minsta höjden som bollen ska nå.
+     * @param lostEnergy - hur mycket energi tappar bollen vid varje studs i antal procentform.
+     * @return antal studs.
+     */
+    public static double totalTouchdown(double startHeight, double minHeight, double lostEnergy){
+
+        double totalTouches = 0;
+        lostEnergy = (100 - lostEnergy) / 100;
+        totalTouches = Math.log(minHeight/startHeight) / Math.log(lostEnergy);
+
+        return totalTouches;
     }
 }
