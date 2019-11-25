@@ -39,6 +39,18 @@ public class Main {
          * En studsboll släpps från 12 meters höjd och varje gång den nuddar marken tappar den 1% av sin energi. Hur många gånger kommer bollen studsa i marken innan den inte studsar hörge än 0.5 meter?
          */
         System.out.println(totalTouchdown(12, 0.5,1));
+        /**
+         * Man drar i en fjäder i 0,05 meter som har en fjäderkonstant 5. Vad är fjädernskraft?
+         */
+        System.out.println(hookeslag(5, 0.05));
+        /**
+         * Räkna ut rörelsemängden när en bil åker med 10 m/s och har en massa för 120Kg.
+         */
+        System.out.println(rorelsemangd(120, 10));
+        /**
+         * Räkna ut impulsen hos en kropp som har 50 konstant kraft som gör sig under 10s.
+         */
+        System.out.println(impulsKraft(50, 10));
 
 
 
@@ -459,4 +471,32 @@ public class Main {
 
         return totalTouches;
     }
+
+
+    public static double hookeslag(double fjaderkonstanten, double deltaLangd){
+
+        double theDistansForce = 0;
+        theDistansForce = fjaderkonstanten * deltaLangd;
+
+        return theDistansForce;
+    }
+
+
+    public static double rorelsemangd(double mass, double velocity){
+
+        double detRorelsemangden = 0;
+        detRorelsemangden = mass * velocity;
+
+        return detRorelsemangden;
+    }
+
+
+    public static double impulsKraft(double kraft, double deltaTid){
+
+        double impulsen = 0;
+        impulsen = kraft * deltaTid;
+
+        return impulsen;
+    }
+
 }
