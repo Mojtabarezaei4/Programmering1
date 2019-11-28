@@ -38,7 +38,7 @@ public class Main {
         /**
          * En studsboll släpps från 12 meters höjd och varje gång den nuddar marken tappar den 1% av sin energi. Hur många gånger kommer bollen studsa i marken innan den inte studsar hörge än 0.5 meter?
          */
-        System.out.println(totalTouchdown(12, 0.5,1));
+        System.out.println(touchCounting(0.5, 1, 12));
         /**
          * Man drar i en fjäder i 0,05 meter som har en fjäderkonstant 5. Vad är fjädernskraft?
          */
@@ -51,35 +51,6 @@ public class Main {
          * Räkna ut impulsen hos en kropp som har 50 konstant kraft som gör sig under 10s.
          */
         System.out.println(impulsKraft(50, 10));
-
-        System.out.println(touchCounting(0.5, 1, 12));
-
-
-
-
-
-        /**
-        System.out.println(fahrenheitToCelsius(50));
-        System.out.println(kelvinToCelsius(0));
-        System.out.println(fluidPressure(FluidTable.WATER, 10));
-        System.out.println(pressureUnderWater(10));
-        System.out.println(kineticEnergy(2, 2));
-        System.out.println(potentialEnergy(2,5));
-        System.out.println(fallSpeed(2.5));
-        System.out.println(delta(5, 1));
-        System.out.println(volumeToMass(FluidTable.WATER, 1));
-        System.out.println(volumeToMass(GasTable.AIR, 1));
-        System.out.println(volumeToMass(SolidTable.IRON, 1));
-        System.out.println(svtVelocity(10, 5));
-        System.out.println(svtDistance(10, 5));
-        System.out.println(svtTime(10, 2));
-        System.out.println(work(50, 10));
-        System.out.println(power(1000, 2));
-        System.out.println(heat(SolidTable.IRON, 1, 2));
-        System.out.println(heat(FluidTable.WATER, 1, 10));
-        System.out.println(heat(GasTable.AIR, 1, 1));
-        System.out.println(velocityToHeight(9.82));
-         **/
 
     }
 
@@ -459,6 +430,7 @@ public class Main {
 
     /**
      *
+     * MATEMATISK FORMEL!!!
      * En metod som räknar ut antal studs för en boll.
      * @param startHeight - en variabel för vilken höjd bollen har från början.
      * @param minHeight - minsta höjden som bollen ska nå.
@@ -475,7 +447,14 @@ public class Main {
     }
 
 
-
+    /**
+     *
+     * EN metod som räknar fram antal studsar på ett föremål när när man har massa och höjden.
+     * @param minHeight - lägsta höjden som föremålet ska studsa.
+     * @param mass - massan på föremålet.
+     * @param height - höjden som föremålet har från början.
+     * @return Det returnar antal studsar.
+     */
     public static int touchCounting(double minHeight, double mass, double height) {
 
         double Startenergy = potentialEnergy(mass, height);
@@ -493,6 +472,13 @@ public class Main {
     }
 
 
+    /**
+     *
+     * En metod som räknar fram hur mycket energi samlas i en utdragen fjäder, hookeslag.
+     * @param fjaderkonstanten - En konstand som beroende på fjädern.
+     * @param deltaLangd - Skillnaden i längd.
+     * @return Det returnar energin.
+     */
     public static double hookeslag(double fjaderkonstanten, double deltaLangd){
 
         double theDistansForce = 0;
@@ -502,6 +488,13 @@ public class Main {
     }
 
 
+    /**
+     *
+     * En metod för att räkna fram rörelsemängden hos ett föremål.
+     * @param mass - Massan hos föremålet.
+     * @param velocity - Hastigheten hos föremålet
+     * @return Det returnar rörelsemängden.
+     */
     public static double rorelsemangd(double mass, double velocity){
 
         double detRorelsemangden = 0;
@@ -511,6 +504,13 @@ public class Main {
     }
 
 
+    /**
+     *
+     * En metod för att räkna fram impulsen.
+     * @param kraft - En variabel som är kraft nu.
+     * @param deltaTid - En variabel som är skillnaden i tid i detta fall.
+     * @return Det returnar impulsen.
+     */
     public static double impulsKraft(double kraft, double deltaTid){
 
         double impulsen = 0;
@@ -519,9 +519,79 @@ public class Main {
         return impulsen;
     }
 
-    public static double kmToMs(double velocity){
-return 0;
 
+    /**
+     *
+     * En metod för att omvandla kilometer per timmar till meter per sekund.
+     * @param velocity - Hastigheten i kilometer per timmar.
+     * @return Det returnar hastigheten meter per sekund.
+     */
+    public static double kmToMs(double velocity){
+        double velocityToMs = 0;
+        velocityToMs = velocity / 3.6;
+
+        return velocityToMs;
+
+    }
+
+
+    /**
+     *
+     * En metod för att omvandla kilogram till gram.
+     * @param mass - Massan i kilogram.
+     * @return Det returnar massan i gram.
+     */
+    public static double kgToGram(double mass){
+
+        double massToGram = 0;
+        massToGram = mass * 1000;
+
+        return massToGram;
+    }
+
+
+    /**
+     *
+     * En metod för att omvandla ton till kilogram.
+     * @param mass - Massan i ton.
+     * @return Det returnar massan i kilogram.
+     */
+    public static double tonToKg(double mass){
+
+        double massToKilogram = 0;
+        massToKilogram = mass * 1000;
+
+        return massToKilogram;
+    }
+
+
+    /**
+     *
+     * En metod för att omvandla kilogram till ton.
+     * @param mass - Massa i kilogram.
+     * @return Det returnar massan i ton.
+     */
+    public static double kgToTon(double mass){
+
+        double massToTon = 0;
+        massToTon = mass / 1000;
+
+        return massToTon;
+    }
+
+
+    /**
+     *
+     * En metod för att omvandla gram till kilogram.
+     * @param mass - Massan i gram.
+     * @return Det returnar massan i kilogram.
+     */
+    public static double gramToKg(double mass){
+
+        double massToKilogram = 0;
+        massToKilogram = mass / 1000;
+
+        return massToKilogram;
     }
 
 }
