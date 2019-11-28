@@ -52,6 +52,8 @@ public class Main {
          */
         System.out.println(impulsKraft(50, 10));
 
+        System.out.println(touchCounting(0.5, 1, 12));
+
 
 
 
@@ -463,11 +465,29 @@ public class Main {
      * @param lostEnergy - hur mycket energi tappar bollen vid varje studs i antal procentform.
      * @return antal studs.
      */
-    public static double totalTouchdown(double startHeight, double minHeight, double lostEnergy){
+    public static int totalTouchdown(double startHeight, double minHeight, double lostEnergy){
 
-        double totalTouches = 0;
+        int totalTouches = 0;
         lostEnergy = (100 - lostEnergy) / 100;
-        totalTouches = Math.log(minHeight/startHeight) / Math.log(lostEnergy);
+        totalTouches = (int) (Math.log(minHeight/startHeight) / Math.log(lostEnergy));
+
+        return totalTouches;
+    }
+
+
+
+    public static int touchCounting(double minHeight, double mass, double height) {
+
+        double Startenergy = potentialEnergy(mass, height);
+        double newHeight = height;
+        int totalTouches = 0;
+
+        while(newHeight > minHeight){
+            Startenergy = Startenergy * 0.99;
+            newHeight = Startenergy / (mass * g_swe);
+
+            totalTouches++;
+        }
 
         return totalTouches;
     }
@@ -497,6 +517,11 @@ public class Main {
         impulsen = kraft * deltaTid;
 
         return impulsen;
+    }
+
+    public static double kmToMs(double velocity){
+return 0;
+
     }
 
 }
