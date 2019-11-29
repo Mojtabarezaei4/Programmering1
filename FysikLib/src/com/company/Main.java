@@ -226,10 +226,10 @@ public class Main {
      */
     public static double volumeToMass(SolidTable solid, double volume){
 
-        double themass = 0;
-        themass = solid.density * volume;
+        double theMass = 0;
+        theMass = solid.density * volume;
 
-        return themass;
+        return theMass;
     }
 
 
@@ -328,6 +328,7 @@ public class Main {
 
         return theEnergi;
     }
+
 
     /**
      *
@@ -457,13 +458,13 @@ public class Main {
      */
     public static int touchCounting(double minHeight, double mass, double height) {
 
-        double Startenergy = potentialEnergy(mass, height);
+        double startEnergy = potentialEnergy(mass, height);
         double newHeight = height;
         int totalTouches = 0;
 
         while(newHeight > minHeight){
-            Startenergy = Startenergy * 0.99;
-            newHeight = Startenergy / (mass * g_swe);
+            startEnergy *= 0.99;
+            newHeight = startEnergy / (mass * g_swe);
 
             totalTouches++;
         }
@@ -497,10 +498,10 @@ public class Main {
      */
     public static double rorelsemangd(double mass, double velocity){
 
-        double detRorelsemangden = 0;
-        detRorelsemangden = mass * velocity;
+        double denRorelsemangden = 0;
+        denRorelsemangden = mass * velocity;
 
-        return detRorelsemangden;
+        return denRorelsemangden;
     }
 
 
