@@ -31,7 +31,7 @@ public class ArrayerLessonsOne {
             System.out.println(fiver);
         }
 
-        */
+
         int [] sjuan = new int[1000];
         for (int i = 0; i < 1000; i++){
 
@@ -44,5 +44,37 @@ public class ArrayerLessonsOne {
             System.out.println(sevens);
 
         }
+        */
+        String[] names = {"Tomas", "Tomas", "Tomas", "Are", "Tomas", "Are", "Tomas", "Are", "Tomas", "Niklas"};
+
+        int year = 0;
+        int yearTomas = 0;
+        int yearNiklas = 0;
+
+        for (int i = 0; i < names.length ; i++) {
+
+            if (names[i] == "Are") {
+
+                year ++;
+
+            }
+
+            if (names[i] == "Tomas"){
+                yearTomas ++;
+            }
+
+            if (names[i] == "Niklas"){
+                yearNiklas ++;
+            }
+
+
+        }
+
+        System.out.println("Are har jobbat här i " + year + " år.");
+        System.out.println("Tomas har jobbat här i " + yearTomas + " år.");
+        System.out.println("Niklas har jobbat här i " + yearNiklas + " år.");
+
+
+
     }
 }
