@@ -149,6 +149,57 @@ public class Main {
      */
     protected static void mediumMode(){
 
+        _theNumberOfGuesses = 10;
+        System.out.println("Write the minimum number of the interval which you " +
+                "want to play between: ");
+        _theMinimumNumber = _inputFromThePlayer.nextInt();
+        System.out.println("Write the highest number of the interval which you " +
+                "want to play between: ");
+        _theHighestNumber = _inputFromThePlayer.nextInt();
+
+        System.out.println("You choosed a interval between " + _theMinimumNumber +
+                "- " + _theHighestNumber + "and you have 10 guesses to guess the number.");
+
+        System.out.println("Pleas try your first try ");
+
+        _theRightAnswer = theRightAnswer(_theHighestNumber, _theMinimumNumber);
+
+        System.out.println(_theRightAnswer);
+
+        for(int i = 1; i <= _theNumberOfGuesses; i--){
+
+            _theGuessedNumber = _inputFromThePlayer.nextInt();
+            _theNumberOfGuesses--;
+
+            if (_theGuessedNumber == _theRightAnswer){
+                System.out.println("Congurats!!!\n" +
+                        "You just won the game!\n" +
+                        "You are so smart!");
+                break;
+            }
+            else if (_theNumberOfGuesses != 0) {
+
+                if (_theGuessedNumber > _theRightAnswer) {
+                    System.out.println("You guessed wrong :( \n" +
+                            "Don't give up! Try a lower number :) \n" +
+                            "You have " + _theNumberOfGuesses + "guesses left");
+                }
+                else if (_theGuessedNumber < _theRightAnswer) {
+                    System.out.println("You guessed wrong :( \n" +
+                            "Don't give up! Try a higher number :) \n" +
+                            "You have " + _theNumberOfGuesses + "guesses left");
+
+                }
+            }
+            else{
+                System.out.println("It's so sad,\n" +
+                        "You lost.\n" +
+                        "But don't give up, you can win next time.");
+
+                break;
+            }
+        }
+
 
     }
 
