@@ -19,6 +19,8 @@ public class Main {
      */
     protected static void launchGuesseyGame(){
 
+
+
     }
 
     /**
@@ -43,7 +45,7 @@ public class Main {
      * This method contains the hardest mode of this game.
      * This says how the game plays and so on.
      */
-    protected static void hardMode{
+    protected static void hardMode(){
 
     }
 }
