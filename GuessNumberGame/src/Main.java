@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -12,7 +13,8 @@ public class Main {
     protected static int _theGuessesLeft;       //the number of guesses which are left
     protected static int _theNumberOfGuesses;   //the number of guesses which the player choose
     protected static int _theGuessedNumber;     //the number which the player guessed
-
+    protected static boolean run = true;        //the program will run until this is true
+    protected static int _playAgainOrNot;       //the player choose to play again or not
 
     public static void main(String[] args) {
 
@@ -20,6 +22,7 @@ public class Main {
     }
 
     /**
+     *
      * This method makes the answer.
      * @param _theHighestNumber the highest number in the interval
      * @param _theMinimumNumber the minimum number in the interval
@@ -39,46 +42,67 @@ public class Main {
      */
     protected static void launchGuesseyGame(){
 
-        System.out.println("Hello and welcome to Guessey game.");
-        System.out.println();
-        System.out.println("This a guess game.\n" +
+        do {
+
+
+        while (run) {
+            System.out.println("Hello and welcome to Guessey game.");
+            System.out.println();
+            System.out.println("This a guess game.\n" +
                     "You will choose a level and then guess the \"unknown\" number.\n" +
                     "You win if you guess right.\n" +
                     "You lose if you don't have any guesses left.");
-        System.out.println();
-        System.out.println("Choose the level: \n" + "1. Easy\n" + "2. Medium\n"
-            + "3. Hard\n" + "0. GoodBye");
-        System.out.println();
-        System.out.println("Please write the chosen number down blow");
+            System.out.println();
+            System.out.println("Choose the level: \n" + "1. Easy\n" + "2. Medium\n"
+                    + "3. Hard\n" + "0. GoodBye");
+            System.out.println();
+            System.out.println("Please write the chosen number down blow");
 
-        _chooseTheLevel = _inputFromThePlayer.nextInt();
-        System.out.println();
+            _chooseTheLevel = _inputFromThePlayer.nextInt();
+            System.out.println();
 
-        switch (_chooseTheLevel){
-            case 0:
-            System.out.println("Hope to see you soon.");
+            switch (_chooseTheLevel) {
+                case 0:
+                    System.out.println("Hope to see you soon.");
 
-            break;
-
-            case 1:
-            easyMode();
-
-            break;
-
-            case 2:
-            mediumMode();
-
-            break;
-
-            case 3:
-            hardMode();
-
-            break;
-
-            default:
                     break;
-            }
 
+                case 1:
+                    easyMode();
+
+                    break;
+
+                case 2:
+                    mediumMode();
+
+                    break;
+
+                case 3:
+                    hardMode();
+
+                    break;
+
+            }
+            System.out.println("Do you want to play again?");
+            System.out.println();
+            System.out.println("Write the chosen number and press enter");
+            System.out.println("1. Yes");
+            System.out.println("2. No");
+            System.out.println();
+
+            _playAgainOrNot = _inputFromThePlayer.nextInt();
+
+            switch (_playAgainOrNot){
+                case 1:
+                    break;
+
+                case 2:
+                    run = false;
+                    System.out.println();
+                    System.out.println("Hope to see you soon.");
+            }
+        }
+        }while (run);
     }
 
     /**
@@ -87,6 +111,7 @@ public class Main {
      */
     protected static void easyMode(){
 
+        System.out.flush();
         System.out.println("How many guesses do you want?");
         _theNumberOfGuesses = _inputFromThePlayer.nextInt();
         System.out.println("Write the minimum number of the interval which you " +
@@ -97,7 +122,7 @@ public class Main {
         _theHighestNumber = _inputFromThePlayer.nextInt();
 
         System.out.println("You chose a interval between " + _theMinimumNumber +
-                " - " + _theHighestNumber + "and you have " + _theNumberOfGuesses +
+                " - " + _theHighestNumber + " and you have " + _theNumberOfGuesses +
                 " guesses to guess the number.");
 
         theAlgorithmOfTheGame();
@@ -111,6 +136,7 @@ public class Main {
      */
     protected static void mediumMode(){
 
+        System.out.flush();
         _theNumberOfGuesses = 10;
         System.out.println("Write the minimum number of the interval which you " +
                 "want to play between: ");
@@ -120,7 +146,7 @@ public class Main {
         _theHighestNumber = _inputFromThePlayer.nextInt();
 
         System.out.println("You chose a interval between " + _theMinimumNumber +
-                " - " + _theHighestNumber + "and you have 10 guesses to guess the number.");
+                " - " + _theHighestNumber + " and you have 10 guesses to guess the number.");
 
         theAlgorithmOfTheGame();
 
@@ -134,12 +160,13 @@ public class Main {
      */
     protected static void hardMode(){
 
+        System.out.flush();
         _theNumberOfGuesses = 5;
         _theMinimumNumber = 1;
         _theHighestNumber = 100;
 
         System.out.println("we chose a number between " + _theMinimumNumber +
-                " - " + _theHighestNumber + "and you have " + _theNumberOfGuesses +
+                " - " + _theHighestNumber + " and you have " + _theNumberOfGuesses +
                 " guesses to guess the number.");
 
         theAlgorithmOfTheGame();
@@ -160,6 +187,7 @@ public class Main {
 
         for(int i = 1; i <= _theNumberOfGuesses; i--){
 
+
             _theGuessedNumber = _inputFromThePlayer.nextInt();
             _theNumberOfGuesses--;
 
@@ -167,6 +195,7 @@ public class Main {
                 System.out.println("Congurats!!!\n" +
                         "You just won the game!\n" +
                         "You are so smart!");
+                System.out.println();
                 break;
             }
             else if (_theNumberOfGuesses != 0) {
