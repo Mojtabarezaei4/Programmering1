@@ -96,49 +96,11 @@ public class Main {
                 "want to play between: ");
         _theHighestNumber = _inputFromThePlayer.nextInt();
 
-        System.out.println("You choosed a interval between " + _theMinimumNumber +
-                "- " + _theHighestNumber + "and you have " + _theNumberOfGuesses +
+        System.out.println("You chose a interval between " + _theMinimumNumber +
+                " - " + _theHighestNumber + "and you have " + _theNumberOfGuesses +
                 " guesses to guess the number.");
 
-        System.out.println("Pleas try your first try ");
-
-        _theRightAnswer = theRightAnswer(_theHighestNumber, _theMinimumNumber);
-
-        System.out.println(_theRightAnswer);
-
-        for(int i = 1; i <= _theNumberOfGuesses; i--){
-
-            _theGuessedNumber = _inputFromThePlayer.nextInt();
-            _theNumberOfGuesses--;
-
-            if (_theGuessedNumber == _theRightAnswer){
-                System.out.println("Congurats!!!\n" +
-                        "You just won the game!\n" +
-                        "You are so smart!");
-                break;
-            }
-            else if (_theNumberOfGuesses != 0) {
-
-                if (_theGuessedNumber > _theRightAnswer) {
-                    System.out.println("You guessed wrong :( \n" +
-                            "Don't give up! Try a lower number :) \n" +
-                            "You have " + _theNumberOfGuesses + "guesses left");
-                }
-                else if (_theGuessedNumber < _theRightAnswer) {
-                   System.out.println("You guessed wrong :( \n" +
-                            "Don't give up! Try a higher number :) \n" +
-                            "You have " + _theNumberOfGuesses + "guesses left");
-
-                }
-            }
-            else{
-                System.out.println("It's so sad,\n" +
-                        "You lost.\n" +
-                        "But don't give up, you can win next time.");
-
-                break;
-            }
-        }
+        theAlgorithmOfTheGame();
 
     }
 
@@ -157,14 +119,44 @@ public class Main {
                 "want to play between: ");
         _theHighestNumber = _inputFromThePlayer.nextInt();
 
-        System.out.println("You choosed a interval between " + _theMinimumNumber +
-                "- " + _theHighestNumber + "and you have 10 guesses to guess the number.");
+        System.out.println("You chose a interval between " + _theMinimumNumber +
+                " - " + _theHighestNumber + "and you have 10 guesses to guess the number.");
+
+        theAlgorithmOfTheGame();
+
+
+    }
+
+    /**
+     *
+     * This method contains the hardest mode of this game.
+     * This says how the game plays and so on.
+     */
+    protected static void hardMode(){
+
+        _theNumberOfGuesses = 5;
+        _theMinimumNumber = 1;
+        _theHighestNumber = 100;
+
+        System.out.println("we chose a number between " + _theMinimumNumber +
+                " - " + _theHighestNumber + "and you have " + _theNumberOfGuesses +
+                " guesses to guess the number.");
+
+        theAlgorithmOfTheGame();
+
+
+    }
+
+    /**
+     *
+     * This is the algorithm of the game. It means how the game works.
+     */
+    private static void theAlgorithmOfTheGame() {
 
         System.out.println("Pleas try your first try ");
 
         _theRightAnswer = theRightAnswer(_theHighestNumber, _theMinimumNumber);
 
-        System.out.println(_theRightAnswer);
 
         for(int i = 1; i <= _theNumberOfGuesses; i--){
 
@@ -199,16 +191,5 @@ public class Main {
                 break;
             }
         }
-
-
-    }
-
-    /**
-     *
-     * This method contains the hardest mode of this game.
-     * This says how the game plays and so on.
-     */
-    protected static void hardMode(){
-
     }
 }
