@@ -4,17 +4,18 @@ import java.util.Scanner;
 
 public class Main {
 
-    static Scanner _inputFromThePlayer = new Scanner(System.in);
+    static Scanner _inputFromThePlayer = new Scanner(System.in);    //it makes that the
+                                                                    //the player can
+                                                                    //put an input
 
-    protected static int _chooseTheLevel;       //the level which the player chooses
-    protected static int _theMinimumNumber;     //the minimum number in the interval
-    protected static int _theHighestNumber;     //the highest number in the interval
-    protected static int _theRightAnswer;       //the randomized number
-    protected static int _theGuessesLeft;       //the number of guesses which are left
-    protected static int _theNumberOfGuesses;   //the number of guesses which the player choose
-    protected static int _theGuessedNumber;     //the number which the player guessed
-    protected static boolean run = true;        //the program will run until this is true
-    protected static int _playAgainOrNot;       //the player choose to play again or not
+    private static int _chooseTheLevel;       //the level which the player chooses
+    private static int _theMinimumNumber;     //the minimum number in the interval
+    private static int _theHighestNumber;     //the highest number in the interval
+    private static int _theRightAnswer;       //the randomized number
+    private static int _theNumberOfGuesses;   //the number of guesses which the player choose
+    private static int _theGuessedNumber;     //the number which the player guessed
+    private static boolean run = true;        //the program will run until this is true
+    private static int _playAgainOrNot;       //the player choose to play again or not
 
     public static void main(String[] args) {
 
@@ -35,12 +36,33 @@ public class Main {
                 _theMinimumNumber;
     }
 
+
+    /**
+     *
+     * A method for makes it sure that the game will not crash
+     * @return an int-input from the player
+     */
+    protected static int wrongSearcher(){
+        int inputFromThePlayer;         //a variable for return an int
+        try{
+            inputFromThePlayer = _inputFromThePlayer.nextInt();
+        }
+        catch (InputMismatchException e){
+            System.out.println("You have to write a number.\nTry again.\n");
+            _inputFromThePlayer.nextLine();
+            inputFromThePlayer = wrongSearcher();
+        }
+        return inputFromThePlayer;
+
+    }
+
     /**
      *
      * This method contains the code of the game.
      * This will contain the whole game.
      */
     protected static void launchGuesseyGame(){
+
 
         do {
 
@@ -58,7 +80,7 @@ public class Main {
             System.out.println();
             System.out.println("Please write the chosen number down blow");
 
-            _chooseTheLevel = _inputFromThePlayer.nextInt();
+            _chooseTheLevel = wrongSearcher();
             System.out.println();
 
             switch (_chooseTheLevel) {
@@ -90,7 +112,7 @@ public class Main {
             System.out.println("2. No");
             System.out.println();
 
-            _playAgainOrNot = _inputFromThePlayer.nextInt();
+            _playAgainOrNot = wrongSearcher();
 
             switch (_playAgainOrNot){
                 case 1:
@@ -113,13 +135,13 @@ public class Main {
 
         System.out.flush();
         System.out.println("How many guesses do you want?");
-        _theNumberOfGuesses = _inputFromThePlayer.nextInt();
+        _theNumberOfGuesses = wrongSearcher();
         System.out.println("Write the minimum number of the interval which you " +
                 "want to play between: ");
-        _theMinimumNumber = _inputFromThePlayer.nextInt();
+        _theMinimumNumber = wrongSearcher();
         System.out.println("Write the highest number of the interval which you " +
                 "want to play between: ");
-        _theHighestNumber = _inputFromThePlayer.nextInt();
+        _theHighestNumber = wrongSearcher();
 
         System.out.println("You chose a interval between " + _theMinimumNumber +
                 " - " + _theHighestNumber + " and you have " + _theNumberOfGuesses +
@@ -140,10 +162,10 @@ public class Main {
         _theNumberOfGuesses = 10;
         System.out.println("Write the minimum number of the interval which you " +
                 "want to play between: ");
-        _theMinimumNumber = _inputFromThePlayer.nextInt();
+        _theMinimumNumber = wrongSearcher();
         System.out.println("Write the highest number of the interval which you " +
                 "want to play between: ");
-        _theHighestNumber = _inputFromThePlayer.nextInt();
+        _theHighestNumber = wrongSearcher();
 
         System.out.println("You chose a interval between " + _theMinimumNumber +
                 " - " + _theHighestNumber + " and you have 10 guesses to guess the number.");
@@ -185,11 +207,8 @@ public class Main {
         _theRightAnswer = theRightAnswer(_theHighestNumber, _theMinimumNumber);
 
 
-        for(int i = 1; i <= _theNumberOfGuesses; i--){
-
-
-            _theGuessedNumber = _inputFromThePlayer.nextInt();
-            _theNumberOfGuesses--;
+        for(int i = 1; i <= _theNumberOfGuesses; i++){
+            _theGuessedNumber = wrongSearcher();
 
             if (_theGuessedNumber == _theRightAnswer){
                 System.out.println("Congurats!!!\n" +
@@ -203,12 +222,12 @@ public class Main {
                 if (_theGuessedNumber > _theRightAnswer) {
                     System.out.println("You guessed wrong :( \n" +
                             "Don't give up! Try a lower number :) \n" +
-                            "You have " + _theNumberOfGuesses + "guesses left");
+                            "You have " + (_theNumberOfGuesses-i) + "guesses left");
                 }
                 else if (_theGuessedNumber < _theRightAnswer) {
                     System.out.println("You guessed wrong :( \n" +
                             "Don't give up! Try a higher number :) \n" +
-                            "You have " + _theNumberOfGuesses + "guesses left");
+                            "You have " + (_theNumberOfGuesses-i) + "guesses left");
 
                 }
             }
