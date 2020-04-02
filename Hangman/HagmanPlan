@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-04-02T07:47:00.092Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36" etag="7RzOIXZBPR8P52ZNr5R8" version="12.9.6" type="github">
+<mxfile host="app.diagrams.net" modified="2020-04-02T09:33:40.007Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36" etag="PhSlYlecauninEiyYZLa" version="12.9.6" type="github">
   <diagram id="9tpq5YROWbL_4j5RrR08" name="Page-1">
-    <mxGraphModel dx="2012" dy="667" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2858" dy="1143" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -26,7 +26,16 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="41af9XrRC3HOxuKFCJRG-2" value="Choose a level" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="41af9XrRC3HOxuKFCJRG-46" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="41af9XrRC3HOxuKFCJRG-2" target="41af9XrRC3HOxuKFCJRG-40">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="80" y="880" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="640" y="210" />
+              <mxPoint x="640" y="1270" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="41af9XrRC3HOxuKFCJRG-2" value="Choose a level or leave." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="-56" y="180" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="41af9XrRC3HOxuKFCJRG-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="41af9XrRC3HOxuKFCJRG-4" target="41af9XrRC3HOxuKFCJRG-12">
@@ -35,19 +44,131 @@
         <mxCell id="41af9XrRC3HOxuKFCJRG-4" value="Easy" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="-520" y="280" width="120" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="41af9XrRC3HOxuKFCJRG-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="41af9XrRC3HOxuKFCJRG-6" target="41af9XrRC3HOxuKFCJRG-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="41af9XrRC3HOxuKFCJRG-6" value="Medium" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="-56" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="41af9XrRC3HOxuKFCJRG-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="41af9XrRC3HOxuKFCJRG-7" target="41af9XrRC3HOxuKFCJRG-28">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="41af9XrRC3HOxuKFCJRG-7" value="Hard" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="410" y="290" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="41af9XrRC3HOxuKFCJRG-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="41af9XrRC3HOxuKFCJRG-12">
+        <mxCell id="41af9XrRC3HOxuKFCJRG-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="41af9XrRC3HOxuKFCJRG-12" target="41af9XrRC3HOxuKFCJRG-16">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="-460" y="540" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-460" y="590" />
+              <mxPoint x="4" y="590" />
+            </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="41af9XrRC3HOxuKFCJRG-12" value="It&#39;s an english word which has 2-4 charactars. You have 7 chanses to guess the word." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="-530" y="390" width="140" height="70" as="geometry" />
+        <mxCell id="41af9XrRC3HOxuKFCJRG-12" value="It&#39;s an english word which has 2-4 charactars. You have 7 chanses to guess the word for save the man." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-535" y="390" width="150" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="41af9XrRC3HOxuKFCJRG-19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="41af9XrRC3HOxuKFCJRG-16" target="41af9XrRC3HOxuKFCJRG-20">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="150" y="810" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="4" y="700" />
+              <mxPoint x="150" y="700" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="41af9XrRC3HOxuKFCJRG-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="41af9XrRC3HOxuKFCJRG-16" target="41af9XrRC3HOxuKFCJRG-23">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-150" y="790" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="4" y="700" />
+              <mxPoint x="-150" y="700" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="41af9XrRC3HOxuKFCJRG-16" value="Player guesses&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-56" y="620" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="41af9XrRC3HOxuKFCJRG-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="41af9XrRC3HOxuKFCJRG-20" target="41af9XrRC3HOxuKFCJRG-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="41af9XrRC3HOxuKFCJRG-34" value="When the player has not any chanses left" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="41af9XrRC3HOxuKFCJRG-20" target="41af9XrRC3HOxuKFCJRG-33">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="150" y="910" />
+              <mxPoint x="150" y="910" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="41af9XrRC3HOxuKFCJRG-20" value="You are hanging a man, be carefull.&lt;br&gt;you have x chanses left to save the man." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="790" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="41af9XrRC3HOxuKFCJRG-37" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="41af9XrRC3HOxuKFCJRG-23" target="41af9XrRC3HOxuKFCJRG-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="41af9XrRC3HOxuKFCJRG-23" value="You guessed right!" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-210" y="790" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="41af9XrRC3HOxuKFCJRG-39" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="41af9XrRC3HOxuKFCJRG-36">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="1080" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-150" y="1030" />
+              <mxPoint y="1030" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="41af9XrRC3HOxuKFCJRG-36" value="You just saved a man!&lt;br&gt;You are a hero bruh." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-210" y="930" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="41af9XrRC3HOxuKFCJRG-41" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" target="41af9XrRC3HOxuKFCJRG-40">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="1140.0000000000002" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="41af9XrRC3HOxuKFCJRG-40" value="Be always a hero!&lt;br&gt;Bye!" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-60" y="1240" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="41af9XrRC3HOxuKFCJRG-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="41af9XrRC3HOxuKFCJRG-26" target="41af9XrRC3HOxuKFCJRG-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="41af9XrRC3HOxuKFCJRG-26" value="It&#39;s an english word which has 5-7 charactars. You have 7 chanses to guess the word for save the man." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-69" y="388.75" width="146" height="72.5" as="geometry" />
+        </mxCell>
+        <mxCell id="41af9XrRC3HOxuKFCJRG-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="41af9XrRC3HOxuKFCJRG-28" target="41af9XrRC3HOxuKFCJRG-16">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="470" y="590" />
+              <mxPoint x="4" y="590" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="41af9XrRC3HOxuKFCJRG-28" value="It&#39;s an english word which has +7 charactars. You have 7 chanses to guess the word for save the man." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="397" y="388.75" width="146" height="72.5" as="geometry" />
+        </mxCell>
+        <mxCell id="41af9XrRC3HOxuKFCJRG-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="41af9XrRC3HOxuKFCJRG-33">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="1080" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="150" y="1030" />
+              <mxPoint y="1030" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="41af9XrRC3HOxuKFCJRG-33" value="Oh noooo! He died ;(" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="950" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="41af9XrRC3HOxuKFCJRG-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="41af9XrRC3HOxuKFCJRG-43" target="41af9XrRC3HOxuKFCJRG-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-580" y="500" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-610" y="1110" />
+              <mxPoint x="-610" y="210" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="41af9XrRC3HOxuKFCJRG-43" value="&lt;span style=&quot;white-space: normal&quot;&gt;Do you want to play again?&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-60" y="1080" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
