@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-04-02T09:55:32.743Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36" etag="iOCVYEs_FrwIWFa1LO2G" version="12.9.6" type="github">
+<mxfile host="app.diagrams.net" modified="2020-04-02T09:55:54.622Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36" etag="BRHFGQPvfri08dXsiZy2" version="12.9.6" type="github">
   <diagram id="9tpq5YROWbL_4j5RrR08" name="Page-1">
-    <mxGraphModel dx="2012" dy="667" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2858" dy="1143" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -33,6 +33,11 @@
               <mxPoint x="640" y="210" />
               <mxPoint x="640" y="1270" />
             </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="41af9XrRC3HOxuKFCJRG-49" value="Leave" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#ffffff;" vertex="1" connectable="0" parent="41af9XrRC3HOxuKFCJRG-46">
+          <mxGeometry x="-0.9038" y="2" relative="1" as="geometry">
+            <mxPoint x="-1" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="41af9XrRC3HOxuKFCJRG-2" value="Choose a level or leave." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
