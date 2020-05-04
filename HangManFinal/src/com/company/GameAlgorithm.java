@@ -6,7 +6,12 @@ public class GameAlgorithm {
 
 
     protected static void run(){
+        start();
         theAnswerWord();
+    }
+
+    protected static void start(){
+        System.out.println(Messages.welcomeMessage);
     }
 
 

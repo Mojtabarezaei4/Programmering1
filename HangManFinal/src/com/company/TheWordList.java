@@ -14,11 +14,11 @@ public class TheWordList {
     public static ArrayList<String> mediumMode = new ArrayList<String>(
             Arrays.asList("Allow" , "Apple" , "Beach" , "Blood" , "Chest" ,
                     "Gifts", "Happy" , "Anyway" , "Camera", "Coffee" , "Effect"
-                    , "Golden" , "Musical" , "Eclipse") );
+                    , "Golden") );
 
     public static ArrayList<String> hardMode = new ArrayList<String>(
             Arrays.asList("Absolute" , "Champion" , "Category" , "Contract" ,
                     "Division" , "Available" , "Breakfast" , "Classroom" ,
-                    "Challenge" , "Different") );
+                    "Challenge" , "Different", "Eclipse", "Musical") );
 
 }
