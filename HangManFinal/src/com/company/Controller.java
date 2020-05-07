@@ -24,7 +24,9 @@ public class Controller {
 
     /**
      *
-     * this method contains the
+     * this method contains the way to how the application is going to run
+     * An while loop for run the application until the player doesn't want to
+     * switch-cases for see which level is chosen to run its code; how the level does work
      */
     private void gameRuns(){
         View.chooseALevel();
@@ -54,6 +56,10 @@ public class Controller {
         }
     }
 
+    /**
+     *
+     * this just asking if the player wants to still play or not
+     */
     private void replayQuestion() {
         View.replayQuestion();
         int replay = _inputFromThePlayer.nextInt();
@@ -72,23 +78,23 @@ public class Controller {
     private void easyMode() {
 
         View.easyModeInfo();
-        ramdomizeTheAnswerWord();
+        randomizeTheAnswerWord();
 
     }
 
 
     private void mediumMode() {
-        ramdomizeTheAnswerWord();
+        randomizeTheAnswerWord();
     }
 
 
     private void hardMode() {
-        ramdomizeTheAnswerWord();
+        randomizeTheAnswerWord();
     }
 
 
-    //Randomize an word out of a list depending to the level that the player choose
-    private void ramdomizeTheAnswerWord(){
+    //Randomize an word out of a list depending to the level the player choose
+    private void randomizeTheAnswerWord(){
         Random theWord = new Random();
         int index;
         if (_model.get_difficulty() == 1){
