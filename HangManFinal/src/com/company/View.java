@@ -119,4 +119,8 @@ public class View {
     public static void replayQuestion(){
         System.out.println("Do you want to play again? \n \n" + "1. yes \n" + "2.No" );
     }
+
+    public static void lineBreake(){
+        System.out.println();
+    }
 }
