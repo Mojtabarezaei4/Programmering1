@@ -93,15 +93,16 @@ public class Controller {
         }
 
         System.out.println(theRightGuessedChar);
-
+        ArrayList<Character> alreadyExitedLetters = new ArrayList<>();
+        ArrayList<Character> guessedWrong = new ArrayList<>();
 
         while (guesses > 0) {
 
-            char guessingLetter = _inputFromThePlayer.next().charAt(0);
+            char guessingLetter = _inputFromThePlayer.next().toLowerCase().charAt(0);
 
-            ArrayList<Character> alreadyExitedLetters = new ArrayList<>();
-            ArrayList<Character> guessedWrong = new ArrayList<>();
 
+
+            int indexOfTheGuessedWrongList = 0;
 
             if (alreadyExitedLetters.contains(guessingLetter)) {
                 System.out.println("You already have entered this letter!");
@@ -127,30 +128,58 @@ public class Controller {
 
                 }
             } else {
-                guessedWrong.add(guessingLetter);
-                System.out.println(guessedWrong);
+
+                guessedWrong.add(indexOfTheGuessedWrongList, guessingLetter);
+
                 View.lineBreake();
                 View.guessedWrong();
                 View.lineBreake();
                 guesses--;
-                if (guesses == 6){
+                indexOfTheGuessedWrongList++;
+
+                if (guesses == 6) {
                     View.firstTryFailed();
+                    View.lineBreake();
+                    System.out.println(theRightGuessedChar);
+
+
                 }
-                if (guesses == 5){
+                if (guesses == 5) {
                     View.secondTryFailed();
+                    View.lineBreake();
+                    System.out.println(theRightGuessedChar);
+
+
                 }
-                if (guesses == 4){
+                if (guesses == 4) {
                     View.thirdTryFailed();
+                    View.lineBreake();
+                    System.out.println(theRightGuessedChar);
+
+
                 }
-                if (guesses == 3){
+                if (guesses == 3) {
                     View.fourthTryFailed();
+                    View.lineBreake();
+                    System.out.println(theRightGuessedChar);
+
+
                 }
-                if (guesses == 2){
+                if (guesses == 2) {
                     View.fifthTryFailed();
+                    View.lineBreake();
+                    System.out.println(theRightGuessedChar);
+
+
                 }
-                if (guesses == 1){
+                if (guesses == 1) {
                     View.sixthTryFailed();
+                    View.lineBreake();
+                    System.out.println(theRightGuessedChar);
+
+
                 }
+                System.out.println(guessedWrong);
 
             }
 
@@ -186,13 +215,13 @@ public class Controller {
         int index;
         if (_model.get_difficulty() == 1) {
             index = theWord.nextInt(TheWordList.easyMode.size());
-            _model.set_theRightAnswer(TheWordList.easyMode.get(index));
+            _model.set_theRightAnswer(TheWordList.easyMode.get(index).toLowerCase());
         } else if (_model.get_difficulty() == 2) {
             index = theWord.nextInt(TheWordList.mediumMode.size());
-            _model.set_theRightAnswer(TheWordList.mediumMode.get(index));
+            _model.set_theRightAnswer(TheWordList.mediumMode.get(index).toLowerCase());
         } else {
             index = theWord.nextInt(TheWordList.hardMode.size());
-            _model.set_theRightAnswer(TheWordList.hardMode.get(index));
+            _model.set_theRightAnswer(TheWordList.hardMode.get(index).toLowerCase());
         }
 
         System.out.println(_model.get_theRightAnswer());
