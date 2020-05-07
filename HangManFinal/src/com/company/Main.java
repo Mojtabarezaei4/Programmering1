@@ -5,7 +5,7 @@ public class Main{
 
     public static void main(String[] args) {
 
-
-        GameAlgorithm.run();
+        Controller _controller = new Controller();
+        _controller.run();
     }
 }
