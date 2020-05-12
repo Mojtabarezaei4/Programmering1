@@ -8,9 +8,6 @@ import java.util.Scanner;
 
 public class Controller {
 
-
-    int guesses = 7;
-
     private Model _model = new Model();
     private Scanner _inputFromThePlayer = new Scanner(System.in);
 
@@ -25,7 +22,6 @@ public class Controller {
         View.welcomeMessage();
         gameRuns();
     }
-
 
     /**
      * this method contains the way to how the application is going to run
@@ -118,7 +114,6 @@ public class Controller {
         algorithmOfTheGame();
     }
 
-
     //Randomize an word out of a list depending to the level the player choose
     private void randomizeTheAnswerWord() {
 
@@ -138,38 +133,35 @@ public class Controller {
         System.out.println(_model.get_theRightAnswer());
     }
 
+    /**
+     * this method includes the function of the game, how the game works
+     * this will be called from every active levels.
+     */
+    private void algorithmOfTheGame() {
+        int guesses = 7;
 
-    private void algorithmOfTheGame(){
+        theNumberOfTheCharInTheHiddenWord();
 
-        char[] theRightGuessedChar = new char[_model.get_theRightAnswer().length()];
 
-        int i = 0;
-        while (_model.get_theRightAnswer().length() > i) {
-            theRightGuessedChar[i] = '-';
-            if (_model.get_theRightAnswer().charAt(i) == ' ') {
-                theRightGuessedChar[i] = ' ';
-            }
-            i++;
-        }
-
-        System.out.println(theRightGuessedChar);
         ArrayList<Character> alreadyExitedLetters = new ArrayList<>();
+        _model.set_alreadyExitedLetters(alreadyExitedLetters);
+
         ArrayList<Character> guessedWrong = new ArrayList<>();
+        _model.set_guessedWrong(guessedWrong);
+
 
         while (guesses > 0) {
 
             char guessingLetter = checkingCharInput();
 
-
-
             int indexOfTheGuessedWrongList = 0;
 
-            if (alreadyExitedLetters.contains(guessingLetter)) {
-                System.out.println("You already have entered this letter!");
+            if (_model.get_alreadyExitedLetters().contains(guessingLetter)) {
+                View.alreadyEnteredGuess();
                 continue;
             }
 
-            alreadyExitedLetters.add(guessingLetter);
+            _model.get_alreadyExitedLetters().add(guessingLetter);
 
             if (_model.get_theRightAnswer().contains(guessingLetter + "")) {
 
@@ -177,9 +169,9 @@ public class Controller {
 
                     if (_model.get_theRightAnswer().charAt(j) == guessingLetter) {
 
-                        theRightGuessedChar[j] = guessingLetter;
+                        _model.get_theRightGuessedChar()[j] = guessingLetter;
 
-                        System.out.println(theRightGuessedChar);
+                        System.out.println(_model.get_theRightGuessedChar());
                         View.lineBrake();
                         View.guessedRight();
 
@@ -189,7 +181,7 @@ public class Controller {
                 }
             } else {
 
-                guessedWrong.add(indexOfTheGuessedWrongList, guessingLetter);
+                _model.get_guessedWrong().add(indexOfTheGuessedWrongList, guessingLetter);
 
                 View.lineBrake();
                 View.guessedWrong();
@@ -200,50 +192,50 @@ public class Controller {
                 if (guesses == 6) {
                     View.firstTryFailed();
                     View.lineBrake();
-                    System.out.println(theRightGuessedChar);
+                    System.out.println(_model.get_theRightGuessedChar());
 
 
                 }
                 if (guesses == 5) {
                     View.secondTryFailed();
                     View.lineBrake();
-                    System.out.println(theRightGuessedChar);
+                    System.out.println(_model.get_theRightGuessedChar());
 
 
                 }
                 if (guesses == 4) {
                     View.thirdTryFailed();
                     View.lineBrake();
-                    System.out.println(theRightGuessedChar);
+                    System.out.println(_model.get_theRightGuessedChar());
 
 
                 }
                 if (guesses == 3) {
                     View.fourthTryFailed();
                     View.lineBrake();
-                    System.out.println(theRightGuessedChar);
+                    System.out.println(_model.get_theRightGuessedChar());
 
 
                 }
                 if (guesses == 2) {
                     View.fifthTryFailed();
                     View.lineBrake();
-                    System.out.println(theRightGuessedChar);
+                    System.out.println(_model.get_theRightGuessedChar());
 
 
                 }
                 if (guesses == 1) {
                     View.sixthTryFailed();
                     View.lineBrake();
-                    System.out.println(theRightGuessedChar);
+                    System.out.println(_model.get_theRightGuessedChar());
 
 
                 }
-                System.out.println(guessedWrong);
+                System.out.println(_model.get_guessedWrong());
 
             }
 
-            if (_model.get_theRightAnswer().equals(String.valueOf(theRightGuessedChar))) {
+            if (_model.get_theRightAnswer().equals(String.valueOf(_model.get_theRightGuessedChar()))) {
                 _model.get_theRightAnswer();
                 View.savedManAscciArt();
                 View.lineBrake();
@@ -260,22 +252,40 @@ public class Controller {
         }
     }
 
+    /**
+     * this will print out '-' instead for the characters of the hidden word.
+     * this will be called in algorithmOfTheGame- method.
+     */
+    private void theNumberOfTheCharInTheHiddenWord() {
+        char[] theRightGuessedChar = new char[_model.get_theRightAnswer().length()];
+        _model.set_theRightGuessedChar(theRightGuessedChar);
+
+        int i = 0;
+        while (_model.get_theRightAnswer().length() > i) {
+            _model.get_theRightGuessedChar()[i] = '-';
+            if (_model.get_theRightAnswer().charAt(i) == ' ') {
+                _model.get_theRightGuessedChar()[i] = ' ';
+            }
+            i++;
+        }
+
+        System.out.println(_model.get_theRightGuessedChar());
+    }
 
     /**
-     *
      * Try-catch method for make the game crash free
      * this will try to get an Int
      * if the player tries to write a char this will keep the player here until
      * it will write a right input data type
+     *
      * @return an int, the int which the player writes
      */
-    public int checkingIntInput(){
+    public int checkingIntInput() {
 
         int inputFromThePlayer;
-        try{
+        try {
             inputFromThePlayer = _inputFromThePlayer.nextInt();
-        }
-        catch (InputMismatchException intInput){
+        } catch (InputMismatchException intInput) {
             View.wrongDatatypeInputForInt();
             _inputFromThePlayer.nextLine();
             inputFromThePlayer = checkingIntInput();
@@ -284,23 +294,23 @@ public class Controller {
         return inputFromThePlayer;
     }
 
-
     /**
-     *
      * Try-catch method for make the game crash free
      * this will try to get an Char
      * if the player tries to write an int this will keep the player here until
      * it will write a right input data type
+     * <p>
+     * OBS: this may not work because an Int is a "character" according computer.
+     *
      * @return a char, the char which the player writes
      */
-    public char checkingCharInput(){
+    public char checkingCharInput() {
 
         char inputFromThePlayer;
-        try{
+        try {
             inputFromThePlayer = _inputFromThePlayer.next().toLowerCase().charAt(0);
-        }
-        catch (InputMismatchException charInput){
-            View.wrongDatatypeInputForString();
+        } catch (InputMismatchException charInput) {
+            View.wrongDatatypeInputForChar();
             _inputFromThePlayer.nextLine();
             inputFromThePlayer = checkingCharInput();
         }
