@@ -85,7 +85,7 @@ public class View {
         System.out.println("  +----+\n" +
                 "  |    |\n" +
                 "  O    |\n" +
-                " /|\\  |\n" +
+                " /|\\   |\n" +
                 "       |\n" +
                 "       |");
     }
@@ -94,7 +94,7 @@ public class View {
         System.out.println("  +----+\n" +
                 "  |    |\n" +
                 "  O    |\n" +
-                " /|\\  |\n" +
+                " /|\\   |\n" +
                 " /     |\n" +
                 "       |");
     }
@@ -103,8 +103,8 @@ public class View {
         System.out.println("  +----+\n" +
                 "  |    |\n" +
                 "  O    |\n" +
-                " /|\\  |\n" +
-                " / \\  |\n" +
+                " /|\\   |\n" +
+                " / \\   |\n" +
                 "       |");
     }
 
@@ -120,7 +120,32 @@ public class View {
         System.out.println("Do you want to play again? \n \n" + "1. yes \n" + "2.No" );
     }
 
-    public static void lineBreake(){
+    public static void lineBrake(){
         System.out.println();
+    }
+
+    public static void savedManAscciArt(){
+        System.out.println("                       ,\n" +
+                "          .---.      _//\n" +
+                "         //\\_/\\\\     \\_\\\n" +
+                "        |/ 0_0 \\|    /\n" +
+                "        | ,___, |   /\n" +
+                "         \\\\___//   /\n" +
+                "          `\"|\"`  .'\n" +
+                "        .--'/'--'\n" +
+                "       /   |\n" +
+                "      |    |\n" +
+                "      |    |\n" +
+                "    .-'\\   |\n" +
+                "    `\"\"\"`  \\\n" +
+                "       ,---.\\\n" +
+                "       \\     \\\n" +
+                "        \\     \\\n" +
+                "         \\     \\\n" +
+                "        .-\\     \\\n" +
+                "       /_.'      |\n" +
+                "                 /\\\n" +
+                "            yey  \\ \\\n" +
+                "                  `\"");
     }
 }
