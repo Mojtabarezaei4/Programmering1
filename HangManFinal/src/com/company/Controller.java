@@ -149,6 +149,7 @@ public class Controller {
         ArrayList<Character> guessedWrong = new ArrayList<>();
         _model.set_guessedWrong(guessedWrong);
 
+        int hangManASCIICounter = 0;
 
         while (guesses > 0) {
 
@@ -189,48 +190,11 @@ public class Controller {
                 guesses--;
                 indexOfTheGuessedWrongList++;
 
-                if (guesses == 6) {
-                    View.firstTryFailed();
-                    View.lineBrake();
-                    System.out.println(_model.get_theRightGuessedChar());
+                System.out.println(View.hangManASCII.get(hangManASCIICounter));
+                View.lineBrake();
+                System.out.println(_model.get_theRightGuessedChar());
+                hangManASCIICounter++;
 
-
-                }
-                if (guesses == 5) {
-                    View.secondTryFailed();
-                    View.lineBrake();
-                    System.out.println(_model.get_theRightGuessedChar());
-
-
-                }
-                if (guesses == 4) {
-                    View.thirdTryFailed();
-                    View.lineBrake();
-                    System.out.println(_model.get_theRightGuessedChar());
-
-
-                }
-                if (guesses == 3) {
-                    View.fourthTryFailed();
-                    View.lineBrake();
-                    System.out.println(_model.get_theRightGuessedChar());
-
-
-                }
-                if (guesses == 2) {
-                    View.fifthTryFailed();
-                    View.lineBrake();
-                    System.out.println(_model.get_theRightGuessedChar());
-
-
-                }
-                if (guesses == 1) {
-                    View.sixthTryFailed();
-                    View.lineBrake();
-                    System.out.println(_model.get_theRightGuessedChar());
-
-
-                }
                 System.out.println(_model.get_guessedWrong());
 
             }

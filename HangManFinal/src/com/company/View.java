@@ -1,5 +1,8 @@
 package com.company;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class View {
 
 
@@ -49,60 +52,6 @@ public class View {
 
     public static void byeSentence() {
         System.out.println("Be always a hero! Bye!");
-    }
-
-    public static void firstTryFailed() {
-        System.out.println(" +----+\n" +
-                "  |    |\n" +
-                "       |\n" +
-                "       |\n" +
-                "       |\n" +
-                "       |");
-    }
-
-    public static void secondTryFailed() {
-        System.out.println("  +----+\n" +
-                "  |    |\n" +
-                "  O    |\n" +
-                "       |\n" +
-                "       |\n" +
-                "       |");
-    }
-
-    public static void thirdTryFailed() {
-        System.out.println(" +----+\n" +
-                "  |    |\n" +
-                "  O    |\n" +
-                "  |    |\n" +
-                "       |\n" +
-                "       |");
-    }
-
-    public static void fourthTryFailed() {
-        System.out.println("  +----+\n" +
-                "  |    |\n" +
-                "  O    |\n" +
-                " /|    |\n" +
-                "       |\n" +
-                "       |");
-    }
-
-    public static void fifthTryFailed() {
-        System.out.println("  +----+\n" +
-                "  |    |\n" +
-                "  O    |\n" +
-                " /|\\   |\n" +
-                "       |\n" +
-                "       |");
-    }
-
-    public static void sixthTryFailed() {
-        System.out.println("  +----+\n" +
-                "  |    |\n" +
-                "  O    |\n" +
-                " /|\\   |\n" +
-                " /     |\n" +
-                "       |");
     }
 
     public static void seventhTryFailed() {
@@ -159,5 +108,43 @@ public class View {
 
         System.out.println("You already have entered this letter!");
     }
+
+    public static ArrayList<String> hangManASCII = new ArrayList<String>(
+            Arrays.asList(" +----+\n" +
+                    "  |    |\n" +
+                    "       |\n" +
+                    "       |\n" +
+                    "       |\n" +
+                    "       |", "  +----+\n" +
+                    "  |    |\n" +
+                    "  O    |\n" +
+                    "       |\n" +
+                    "       |\n" +
+                    "       |", " +----+\n" +
+                    "  |    |\n" +
+                    "  O    |\n" +
+                    "  |    |\n" +
+                    "       |\n" +
+                    "       |", "  +----+\n" +
+                    "  |    |\n" +
+                    "  O    |\n" +
+                    " /|    |\n" +
+                    "       |\n" +
+                    "       |", "  +----+\n" +
+                    "  |    |\n" +
+                    "  O    |\n" +
+                    " /|\\   |\n" +
+                    "       |\n" +
+                    "       |", "  +----+\n" +
+                    "  |    |\n" +
+                    "  O    |\n" +
+                    " /|\\   |\n" +
+                    " /     |\n" +
+                    "       |", "  +----+\n" +
+                    "  |    |\n" +
+                    "  O    |\n" +
+                    " /|\\   |\n" +
+                    " / \\   |\n" +
+                    "       |"));
 
 }
